@@ -1,0 +1,6 @@
+VCD info: dumpfile sim/dump_layer4_flit_to_phy_lanes.vcd opened for output.
+=================================================
+TESTS PASSED: 39   TESTS FAILED: 0
+=================================================
+RESULT: ALL TESTS PASSED
+tb/tb_layer4_flit_to_phy_lanes.v:230: $finish called at 425000 (1ps)

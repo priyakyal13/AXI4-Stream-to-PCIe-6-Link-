@@ -1,0 +1,7 @@
+VCD info: dumpfile sim/dump_layer2_axis_arbiter.vcd opened for output.
+=================================================
+TESTS PASSED: 33   TESTS FAILED: 0
+Atomicity invariant violations: 0
+=================================================
+RESULT: ALL TESTS PASSED
+tb/tb_layer2_axis_arbiter.v:350: $finish called at 540000 (1ps)

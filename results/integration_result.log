@@ -1,0 +1,9 @@
+VCD info: dumpfile sim/dump_top_4layer_true_split.vcd opened for output.
+=================================================
+FLITs sent (scoreboard pushes): 9
+FLITs lane-checked (main scenario): 6
+Grant counts: master0=7 master1=2
+TESTS PASSED: 29   TESTS FAILED: 0
+=================================================
+RESULT: ALL TESTS PASSED
+tb/tb_top_4layer_true_split.v:393: $finish called at 845000 (1ps)
