@@ -1,0 +1,31 @@
+{
+  "DESIGN_NAME": "pd_top_bidir",
+  "VERILOG_FILES": [
+    "dir::../rtl/pd_top_bidir.v",
+    "dir::../rtl/top_4layer_bidir.v",
+    "dir::../rtl/layer1_axis_stream_ingress.v",
+    "dir::../rtl/layer2_axis_arbiter.v",
+    "dir::../rtl/layer3_flit_packetizer.v",
+    "dir::../rtl/crc32_d512.v",
+    "dir::../rtl/layer4_flit_to_phy_lanes_framed.v",
+    "dir::../rtl/layer4_phy_lanes_to_axis.v",
+    "dir::../rtl/crc32_meta_272.v"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 20,
+  "FP_SIZING": "absolute",
+  "DIE_AREA": [
+    0,
+    0,
+    2300,
+    2300
+  ],
+  "PL_TARGET_DENSITY_PCT": 40,
+  "FP_IO_MIN_DISTANCE": 1,
+  "RUN_CTS": true,
+  "RUN_POST_GRT_RESIZER_TIMING": true,
+  "DIODE_ON_PORTS": "in",
+  "GRT_ANTENNA_ITERS": 10,
+  "GRT_ANTENNA_MARGIN": 25,
+  "RUN_HEURISTIC_DIODE_INSERTION": true
+}
