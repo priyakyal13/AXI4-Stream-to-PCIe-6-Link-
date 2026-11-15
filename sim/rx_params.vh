@@ -1,0 +1,2 @@
+`define RX_NFRAMES 600
+`define RX_NBEATS 613
