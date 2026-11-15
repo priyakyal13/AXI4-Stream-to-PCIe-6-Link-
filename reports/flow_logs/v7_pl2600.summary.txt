@@ -1,0 +1,14 @@
+[INFO PPL-0001] Number of slots          7592
+[INFO PPL-0002] Number of I/O            6514
+[INFO PPL-0003] Number of I/O w/sink     6514
+[INFO PPL-0004] Number of I/O w/o sink   0
+FINAL_tt: setup_WNS 9.276510226641221e-9 setup_TNS 0.0 hold_WNS 3.9790737371703244e-10
+FINAL_ss: setup_WNS 3.923391389548669e-9 setup_TNS 0.0 hold_WNS 7.72473751631253e-10
+FINAL_ff: setup_WNS 1.0597413613311346e-8 setup_TNS 0.0 hold_WNS 2.572629054231612e-10
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: _75619_ (recovery check against rising-edge clock clk)
+                             14.208   slack (MET)
+Startpoint: _77937_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _77967_ (rising edge-triggered flip-flop clocked by clk)
+                              3.923   slack (MET)
+Design area 663530 u^2 10% utilization.

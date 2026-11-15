@@ -1,0 +1,24 @@
+PASS  make layer1 :: RESULT: ALL TESTS PASSED
+PASS  make layer2 :: RESULT: ALL TESTS PASSED
+PASS  make layer3 :: RESULT: ALL TESTS PASSED
+PASS  make layer4 :: RESULT: ALL TESTS PASSED
+PASS  make top :: RESULT: ALL TESTS PASSED
+PASS  make bidir :: BIDIR_TEST_SUMMARY expected_beats=13 observed_beats=13 good_frames=6 bad_frames=1 error_pulses=1 failures=0
+PASS  make protocol-check :: PASS: protocol reference checks = 1000
+PASS  random random  N=500 SEED=1 :: RESULT: ALL TESTS PASSED
+PASS  random network N=300 SEED=11 :: RESULT: ALL TESTS PASSED
+PASS  random jumbo   N=100 SEED=17 :: RESULT: ALL TESTS PASSED
+PASS  random ml      N=100 SEED=23 :: RESULT: ALL TESTS PASSED
+PASS  make rxsb :: RXSB gap<=3 bp=70% seed=1 frames=600 : REF fails=0  NEW fails=0
+PASS  make crceq :: TX framed equivalence: 4000 cycles, 1353 frames accepted, fails=0
+PASS  toprand SEED=1 gap=2 bp=70 :: PASS: BIDIR random loopback (seed=1 npk=40 gap<=2 bp=70%)
+PASS  toprand SEED=2 gap=0 bp=100 :: PASS: BIDIR random loopback (seed=2 npk=40 gap<=0 bp=100%)
+PASS  toprand SEED=3 gap=0 bp=30 :: PASS: BIDIR random loopback (seed=3 npk=40 gap<=0 bp=30%)
+PASS  toprand SEED=4 gap=5 bp=50 :: PASS: BIDIR random loopback (seed=4 npk=40 gap<=5 bp=50%)
+PASS  toprand SEED=5 gap=1 bp=90 :: PASS: BIDIR random loopback (seed=5 npk=40 gap<=1 bp=90%)
+PASS  toprand SEED=6 gap=8 bp=20 :: PASS: BIDIR random loopback (seed=6 npk=40 gap<=8 bp=20%)
+PASS  toprand SEED=7 gap=3 bp=70 :: PASS: BIDIR random loopback (seed=7 npk=40 gap<=3 bp=70%)
+PASS  toprand SEED=8 gap=0 bp=60 :: PASS: BIDIR random loopback (seed=8 npk=40 gap<=0 bp=60%)
+PASS  toprand SEED=9 gap=4 bp=100 :: PASS: BIDIR random loopback (seed=9 npk=40 gap<=4 bp=100%)
+PASS  toprand SEED=10 gap=2 bp=40 :: PASS: BIDIR random loopback (seed=10 npk=40 gap<=2 bp=40%)
+REGRESSION_STATUS: ALL_PASS

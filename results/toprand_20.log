@@ -1,0 +1,6 @@
+mkdir -p sim results
+iverilog -g2012 -o sim/toprand.out tb/tb_top_bidir_random.v rtl/top_4layer_bidir.v rtl/layer1_axis_stream_ingress.v rtl/layer2_axis_arbiter.v rtl/layer3_flit_packetizer.v rtl/crc32_d512.v rtl/crc32_meta_272.v rtl/layer4_flit_to_phy_lanes_framed.v rtl/layer4_phy_lanes_to_axis.v
+vvp sim/toprand.out +seed=3 +npk=20 +gap=2 +bp=70 | tee results/top_random_result.log
+phase1: packets in=40 out=40 beats_out=175 frames_good=63 frames_bad=0
+phase3 (post-reset): packets in=20 out=20 frames_good=37 frames_bad=0
+PASS: BIDIR random loopback (seed=3 npk=20 gap<=2 bp=70%)

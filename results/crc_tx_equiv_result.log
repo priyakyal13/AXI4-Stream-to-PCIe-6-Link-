@@ -1,0 +1,3 @@
+meta-CRC: 23274 vectors compared (new vs original vs zlib), fails=0
+TX framed equivalence: 4000 cycles, 1353 frames accepted, fails=0
+PASS: CRC/TX equivalence

@@ -1,0 +1,4 @@
+   Chip area for module '\pd_top_bidir': 436959.078400
+     sky130_fd_sc_hd__dfrtp_1       17
+     sky130_fd_sc_hd__dfstp_2        4
+     sky130_fd_sc_hd__dfxtp_1     7750

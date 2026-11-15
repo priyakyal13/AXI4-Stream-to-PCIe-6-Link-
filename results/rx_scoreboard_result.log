@@ -1,0 +1,2 @@
+RXSB gap<=3 bp=70% seed=1 frames=600 : REF fails=0  NEW fails=0
+PASS: RX scoreboard (original and new RX both match the independent model)

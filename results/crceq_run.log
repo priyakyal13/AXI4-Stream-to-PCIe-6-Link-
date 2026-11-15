@@ -1,0 +1,7 @@
+python3 scripts/gen_meta_crc_vectors.py
+wrote 3274 vectors
+iverilog -g2012 -o sim/crceq.out tb/tb_crc_tx_equiv.v rtl/crc32_meta_272.v rtl/layer4_flit_to_phy_lanes_framed.v tb/ref/ref_crc32_meta_272.v tb/ref/ref_layer4_flit_to_phy_lanes_framed.v
+vvp sim/crceq.out | tee results/crc_tx_equiv_result.log
+meta-CRC: 23274 vectors compared (new vs original vs zlib), fails=0
+TX framed equivalence: 4000 cycles, 1353 frames accepted, fails=0
+PASS: CRC/TX equivalence

@@ -1,0 +1,11 @@
+mkdir -p sim results
+iverilog -g2012 -o sim/bidir.out tb/tb_top_4layer_bidir.v \
+	rtl/top_4layer_bidir.v rtl/layer1_axis_stream_ingress.v \
+	rtl/layer2_axis_arbiter.v rtl/layer3_flit_packetizer.v \
+	rtl/crc32_d512.v rtl/crc32_meta_272.v \
+	rtl/layer4_flit_to_phy_lanes_framed.v rtl/layer4_phy_lanes_to_axis.v
+vvp sim/bidir.out | tee results/bidir_result.log
+VCD info: dumpfile sim/dump_top_4layer_bidir.vcd opened for output.
+RX error pulse code=1
+PASS: BIDIR loopback; beats=13 frames_ok=6 frames_bad=1 checks=39
+BIDIR_TEST_SUMMARY expected_beats=13 observed_beats=13 good_frames=6 bad_frames=1 error_pulses=1 failures=0

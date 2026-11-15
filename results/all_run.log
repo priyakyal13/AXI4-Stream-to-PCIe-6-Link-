@@ -1,0 +1,62 @@
+mkdir -p sim results
+iverilog -g2012 -o sim/layer1.out tb/tb_layer1_axis_stream_ingress.v rtl/layer1_axis_stream_ingress.v
+vvp sim/layer1.out | tee results/layer1_result.log
+VCD info: dumpfile sim/dump_layer1_axis_stream_ingress.vcd opened for output.
+=================================================
+TESTS PASSED: 32   TESTS FAILED: 0
+=================================================
+RESULT: ALL TESTS PASSED
+mkdir -p sim results
+iverilog -g2012 -o sim/layer2.out tb/tb_layer2_axis_arbiter.v rtl/layer2_axis_arbiter.v
+vvp sim/layer2.out | tee results/layer2_result.log
+VCD info: dumpfile sim/dump_layer2_axis_arbiter.vcd opened for output.
+=================================================
+TESTS PASSED: 33   TESTS FAILED: 0
+Atomicity invariant violations: 0
+=================================================
+RESULT: ALL TESTS PASSED
+mkdir -p sim results
+iverilog -g2012 -o sim/layer3.out tb/tb_layer3_flit_packetizer.v rtl/layer3_flit_packetizer.v rtl/crc32_d512.v
+vvp sim/layer3.out | tee results/layer3_result.log
+VCD info: dumpfile sim/dump_layer3_flit_packetizer.vcd opened for output.
+=================================================
+TESTS PASSED: 29   TESTS FAILED: 0
+=================================================
+RESULT: ALL TESTS PASSED
+mkdir -p sim results
+iverilog -g2012 -o sim/layer4.out tb/tb_layer4_flit_to_phy_lanes.v rtl/layer4_flit_to_phy_lanes.v
+vvp sim/layer4.out | tee results/layer4_result.log
+VCD info: dumpfile sim/dump_layer4_flit_to_phy_lanes.vcd opened for output.
+=================================================
+TESTS PASSED: 39   TESTS FAILED: 0
+=================================================
+RESULT: ALL TESTS PASSED
+mkdir -p sim results
+iverilog -g2012 -o sim/top.out tb/tb_top_4layer_true_split.v rtl/top_4layer_true_split.v \
+	rtl/layer1_axis_stream_ingress.v rtl/layer2_axis_arbiter.v \
+	rtl/layer3_flit_packetizer.v rtl/crc32_d512.v rtl/layer4_flit_to_phy_lanes.v
+vvp sim/top.out | tee results/integration_result.log
+VCD info: dumpfile sim/dump_top_4layer_true_split.vcd opened for output.
+=================================================
+FLITs sent (scoreboard pushes): 9
+FLITs lane-checked (main scenario): 6
+Grant counts: master0=7 master1=2
+TESTS PASSED: 29   TESTS FAILED: 0
+=================================================
+RESULT: ALL TESTS PASSED
+mkdir -p sim results
+iverilog -g2012 -o sim/bidir.out tb/tb_top_4layer_bidir.v \
+	rtl/top_4layer_bidir.v rtl/layer1_axis_stream_ingress.v \
+	rtl/layer2_axis_arbiter.v rtl/layer3_flit_packetizer.v \
+	rtl/crc32_d512.v rtl/crc32_meta_272.v \
+	rtl/layer4_flit_to_phy_lanes_framed.v rtl/layer4_phy_lanes_to_axis.v
+vvp sim/bidir.out | tee results/bidir_result.log
+VCD info: dumpfile sim/dump_top_4layer_bidir.vcd opened for output.
+RX error pulse code=1
+PASS: BIDIR loopback; beats=13 frames_ok=6 frames_bad=1 checks=39
+BIDIR_TEST_SUMMARY expected_beats=13 observed_beats=13 good_frames=6 bad_frames=1 error_pulses=1 failures=0
+python3 scripts/check_bidir_protocol.py
+PASS: protocol reference checks = 1000
+PASS: 2384-bit frame / four 596-bit lanes / 2-bit Gray symbols
+PASS: data CRC and metadata CRC detect injected corruption
+NOTE: Run `make bidir` to verify the RTL implementation itself.

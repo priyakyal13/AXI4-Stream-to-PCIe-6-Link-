@@ -1,0 +1,6 @@
+python3 scripts/gen_rx_vectors.py 1 600
+seed=1 frames=600 good=272 dataCRC_bad=120 metaCRC_bad=125 magic_bad=83 good_beats=613
+iverilog -g2012 -Isim -o sim/rxsb.out tb/tb_rx_scoreboard.v rtl/layer4_phy_lanes_to_axis.v rtl/crc32_meta_272.v rtl/crc32_d512.v tb/ref/ref_layer4_phy_lanes_to_axis.v tb/ref/ref_crc32_meta_272.v
+vvp sim/rxsb.out +gap=3 +bp=70 +seed=1 | tee results/rx_scoreboard_result.log
+RXSB gap<=3 bp=70% seed=1 frames=600 : REF fails=0  NEW fails=0
+PASS: RX scoreboard (original and new RX both match the independent model)

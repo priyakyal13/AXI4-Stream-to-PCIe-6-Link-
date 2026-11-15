@@ -1,0 +1,4 @@
+VCD info: dumpfile sim/dump_top_4layer_bidir.vcd opened for output.
+RX error pulse code=1
+PASS: BIDIR loopback; beats=13 frames_ok=6 frames_bad=1 checks=39
+BIDIR_TEST_SUMMARY expected_beats=13 observed_beats=13 good_frames=6 bad_frames=1 error_pulses=1 failures=0
