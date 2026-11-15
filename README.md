@@ -71,7 +71,6 @@ Run `scripts/run_regression.sh 10`. Log: `results/regression_summary.log` (ends 
 | `reports/` | Final report (PDF), design document, OpenLane v7 results, timing comparison, Stage 1 report (historical TX-only baseline) |
 | `fpga/` | Nexys 4 DDR prototype: description, top-level schematic, Vivado screenshots |
 
-The full layout GDS (`pd_top_bidir.gds`, zipped) is attached to the Releases page because of its size.
 
 ## Reproduce
 
