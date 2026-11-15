@@ -1,0 +1,7 @@
+sim/*.out
+sim/*.vvp
+physical_design/runs/
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
